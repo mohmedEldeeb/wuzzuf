@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import LoadingBar from "./layouts/LoadingBar/LoadingBar";
 
 const NavBar = React.lazy(() => import("./layouts/NavBar"));
