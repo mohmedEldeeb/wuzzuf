@@ -2,7 +2,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import RelatedSkills from "./RelatedSkills";
+import RelatedSkills from "../../components/src/RelatedSkills/RelatedSkills";
 
 // Mock data for testing
 const mockData = {

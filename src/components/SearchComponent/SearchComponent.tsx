@@ -11,12 +11,18 @@ import { addSearchTerm } from "../../store/slices/searchHistorySlices";
 type Props = {
   isSearching?: boolean;
   setJobs?: any;
+  loading?: boolean;
+  setLoading?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
-const SearchComponent: React.FC<Props> = ({ isSearching, setJobs }) => {
+const SearchComponent: React.FC<Props> = ({
+  isSearching,
+  setJobs,
+  setLoading,
+}) => {
   const queryx = useQuery();
 
   const [query, setQuery] = useState<string>(queryx.get("query") || "");
@@ -32,6 +38,7 @@ const SearchComponent: React.FC<Props> = ({ isSearching, setJobs }) => {
   const debouncedSearch = useCallback(
     debounce((searchTerm: string) => {
       console.log("Searching for:", searchTerm);
+      setLoading!(true);
       api.get(`jobs/search?query=${searchTerm}`).then((response) => {
         console.log(response);
         setJobs(response.data.data.jobs);
@@ -40,8 +47,9 @@ const SearchComponent: React.FC<Props> = ({ isSearching, setJobs }) => {
           (item: any) => item.attributes.title
         );
         setSuggestions(suggestions);
-        // setJobs(suggestions);
       });
+
+      setLoading!(false);
     }, 500),
     []
   );
@@ -49,13 +57,13 @@ const SearchComponent: React.FC<Props> = ({ isSearching, setJobs }) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
-    if (!isSearching && value.length > 2) {
+    if (isSearching) {
       navigate(`/jobs/search?query=${value}`, { state: { query: value } });
     }
     if (value.length > 2) {
-      debouncedSearch(value);
-
       navigate(`/jobs/search?query=${value}`, { replace: true });
+      setLoading!(true);
+      debouncedSearch(value);
     } else {
       setSuggestions([]);
     }
