@@ -1,0 +1,66 @@
+// styles.scss
+$primary-color: #007bff;
+$hover-color: #0056b3;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 0px 10px;
+  height: 77px;
+  .nav-links {
+    display: flex;
+    gap: 15px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    .logo {
+      color: white;
+      text-decoration: none;
+      height: 77px;
+      line-height: 77px;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  &.mobile-active .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+
+    .nav-links {
+      display: none; // Hide links initially
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+// LoadingBar.module.scss
+.loading-container {
+  width: 100%;
+  background-color: #00ff37;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.loading-bar {
+  height: 30px;
+  width: 0;
+  background-color: #007bff;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 25px;
+  transition: width 0.4s ease-in-out;
+}

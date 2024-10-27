@@ -1,0 +1,44 @@
+.job-page {
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+
+  .job-related-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+    margin: 20px;
+    width: 25%;
+    background-color: #bcb5b5;
+    border-radius: 10px;
+  }
+}
+.job-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 70%;
+
+  .job-header {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    margin-bottom: 20px;
+    .job-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .job-description {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+}

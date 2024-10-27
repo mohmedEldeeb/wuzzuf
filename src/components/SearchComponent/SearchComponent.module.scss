@@ -1,0 +1,50 @@
+// SearchComponent.module.scss
+// $primary-color: #007bff;
+
+.search-component {
+  position: relative;
+  width: 50%;
+  margin: 0 auto; // Center the component
+
+  input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; // Add padding for the icon
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 76px;
+    font-size: larger;
+  }
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    // color: $primary-color;
+  }
+
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
