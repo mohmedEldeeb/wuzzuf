@@ -3,13 +3,19 @@ import Card from "../../components/Card/Card";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import SearchHistory from "../../components/SearchHistory/SearchHistory";
 import styles from "./Search.module.scss";
+import api from "../../services/api";
 
 const Search = () => {
   const [jobs, setJobs] = useState<any>([]);
 
   useEffect(() => {
-    console.log(jobs);
-  }, [jobs]);
+    if (jobs?.length > 0) return;
+    const fetchJobs = async () => {
+      const response = await api.get(`jobs`);
+      setJobs(response.data.data.jobs);
+    };
+    fetchJobs();
+  }, []);
   return (
     <div className={styles["search-page"]}>
       <h1>Search</h1>
