@@ -6,7 +6,6 @@ import api from "../../services/api";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store/store";
-import { fetchItemsSearch } from "../../store/slices/jopSearchSlices";
 import { addSearchTerm } from "../../store/slices/searchHistorySlices";
 
 type Props = {
@@ -57,7 +56,6 @@ const SearchComponent: React.FC<Props> = ({ isSearching, setJobs }) => {
       debouncedSearch(value);
 
       navigate(`/jobs/search?query=${value}`, { replace: true });
-      dispatch(fetchItemsSearch(value));
     } else {
       setSuggestions([]);
     }
