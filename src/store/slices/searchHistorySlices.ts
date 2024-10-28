@@ -1,5 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Initial state
 const initialState: string[] = [
@@ -18,9 +17,7 @@ const searchHistorySlice = createSlice({
   initialState,
   reducers: {
     addSearchTerm: (state, action: PayloadAction<string>) => {
-      // add in the first position;
       state.unshift(action.payload);
-      //   state.push(action.payload);
     },
   },
 });

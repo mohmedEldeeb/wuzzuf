@@ -2,10 +2,9 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import SearchHistory from "../../src/components/SearchHistory/SearchHistory";
-import { RootState } from "../../src/store/store";
 
 // Initialize mock store
-const mockStore = configureStore<RootState>();
+const mockStore = configureStore();
 
 describe("SearchHistory component", () => {
   it("renders search history items", () => {
@@ -19,7 +18,7 @@ describe("SearchHistory component", () => {
     };
 
     // Create the store with the initial state
-    const store = mockStore<RootState>(initialState);
+    const store = mockStore(initialState);
 
     // Render component with Redux provider
     render(

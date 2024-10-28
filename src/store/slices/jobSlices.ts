@@ -1,18 +1,18 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import api from "../../services/api";
-interface Item {
-  id: string;
-  type: string;
-  attributes: {
-    title: string;
-  };
-  relationships: {
-    skills: {
-      id: string;
-    }[];
-  };
-}
+// interface Item {
+//   id: string;
+//   type: string;
+//   attributes: {
+//     title: string;
+//   };
+//   relationships: {
+//     skills: {
+//       id: string;
+//     }[];
+//   };
+// }
 interface Job {
   id: string;
   type: string;

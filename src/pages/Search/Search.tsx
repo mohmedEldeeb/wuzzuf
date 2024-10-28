@@ -4,7 +4,6 @@ import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import SearchHistory from "../../components/SearchHistory/SearchHistory";
 import styles from "./Search.module.scss";
 import api from "../../services/api";
-import { useLocation } from "react-router-dom";
 import LoadingBar from "../../layouts/LoadingBar/LoadingBar";
 
 const Search = () => {

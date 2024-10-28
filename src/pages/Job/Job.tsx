@@ -49,7 +49,9 @@ const Job: React.FC = () => {
     <div className={styles["job-page"]}>
       <div className={styles["job-container"]}>
         <div className={styles["job-header"]}>
-          <div className={styles["job-title"]}>Job Title:</div>
+          <div className={styles["job-title"]}>
+            Job Title:{job?.attributes?.title}
+          </div>
         </div>
         <div className={styles["job-description"]}>
           <p>Job Description</p>
