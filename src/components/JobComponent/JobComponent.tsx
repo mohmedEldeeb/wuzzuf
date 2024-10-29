@@ -13,7 +13,6 @@ const JobComponent: React.FC<Props> = ({ id }) => {
       try {
         const response = await api.get(`job/${id}`);
         setData(response.data.data.job);
-        console.log(response);
       } catch (error) {
         console.error(error);
       }

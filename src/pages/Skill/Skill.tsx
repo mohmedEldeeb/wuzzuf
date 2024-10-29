@@ -13,7 +13,6 @@ const Skill: React.FC = () => {
       try {
         const response = await api.get(`skill/${uuid}`);
         setSkill(response.data.data.skill);
-        console.log(response);
       } catch (error) {
         console.error(error);
       }

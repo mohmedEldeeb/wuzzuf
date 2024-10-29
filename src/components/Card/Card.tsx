@@ -35,7 +35,6 @@ const Card: React.FC<CardProps> = ({
           responses.map((res) => res.data.data.skill.attributes)
         );
 
-        // console.log(skillsData);
         setSkills(skillsData);
       } catch (error) {
         console.error("Error fetching skills:", error);

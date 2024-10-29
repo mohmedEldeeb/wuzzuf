@@ -18,9 +18,6 @@ const Job: React.FC = () => {
         responses.map((res) => res.data.data.skill.relationships.jobs)
       );
 
-      console.log("setRelatedJobs", skillsData.flat(), [
-        [...new Set(skillsData.flat().map((item: any) => item.id))],
-      ]);
       setRelatedJobs([
         ...new Set(skillsData.flat().map((item: any) => item.id)),
       ]);
@@ -35,7 +32,6 @@ const Job: React.FC = () => {
         const response = await api.get(`job/${uuid}`);
         setJob(response.data.data.job);
         fetchSkills(response.data.data.job?.relationships?.skills);
-        console.log(response);
       } catch (error) {
         console.error(error);
       }

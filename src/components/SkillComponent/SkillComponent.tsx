@@ -14,7 +14,6 @@ const SkillComponent: React.FC<Props> = ({ id }) => {
       try {
         const response = await api.get(`skill/${id}`);
         setData(response.data.data.skill);
-        console.log(response);
       } catch (error) {
         console.error(error);
       }

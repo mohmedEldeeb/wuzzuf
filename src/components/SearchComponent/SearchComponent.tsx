@@ -37,10 +37,8 @@ const SearchComponent: React.FC<Props> = ({
 
   const debouncedSearch = useCallback(
     debounce((searchTerm: string) => {
-      console.log("Searching for:", searchTerm);
       setLoading!(true);
       api.get(`jobs/search?query=${searchTerm}`).then((response) => {
-        console.log(response);
         setJobs(response.data.data.jobs);
 
         let suggestions = response.data.data.jobs.map(
